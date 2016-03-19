@@ -1,0 +1,92 @@
+footer
+{
+    display: flex;
+    flex-direction: column;
+}
+.contacts
+{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 475px;
+
+    text-align: center;
+
+    flex-wrap: wrap;
+    &__title
+    {
+        font-size: @font-size--h1;
+
+        width: 100%;
+    }
+}
+.follow-us
+{
+    display: none;
+    flex-direction: column;
+
+    min-height: 290px;
+
+    justify-content: space-around;
+    align-items: center;
+}
+// photoupload-page, form-page footer
+.photoupload-page .follow-us,
+.form-page .follow-us
+{
+    display: flex;
+}
+@media (min-width: @screen-md)
+{
+    .follow-us
+    {
+        display: none;
+        flex-direction: row;
+    }
+    .contacts
+    {
+        flex-direction: row;
+        &__title
+        {
+            font-size: @font-size--h1;
+
+            width: 100%;
+        }
+        &__call,
+        &__mailto
+        {
+            width: 50%;
+        }
+        &__address
+        {
+            width: 100%;
+        }
+    }
+    .follow-us
+    {
+        display: flex;
+
+        justify-content: space-between;
+        &__logo
+        {
+            width: 150px;
+            height: 50px;
+        }
+    }
+}
+@media (min-width: @screen-bg)
+{
+    .contacts
+    {
+        min-height: 465px;
+        &__call,
+        &__mailto
+        {
+            width: 33.3%;
+        }
+        &__address
+        {
+            width: 33.3%;
+        }
+    }
+}

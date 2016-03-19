@@ -1,0 +1,226 @@
+.download-app,
+.features-row,
+{
+    display: flex;
+}
+.features-row
+{
+    flex-direction: column;
+
+    background-color: @bg-color__gray;
+}
+.features__intro
+{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 250px;
+
+    background-color: white;
+
+    align-items: center;
+    justify-content: center;
+}
+.features__col
+{
+    width: 50%;
+}
+.feature
+{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 160px;
+    padding: 5px 0;
+
+    align-items: center;
+    &__title
+    {
+        font-weight: 700;
+
+        margin-bottom: 10px;
+    }
+}
+.mobilefone-pic
+{
+    min-height: 300px;
+
+    background: url(../img/iphone-screen-mobile.png) no-repeat 50% -20%;
+}
+.effect
+{
+    display: none;
+}
+.slider input
+{
+    display: none;
+}
+.feedback-slider
+{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 350px;
+
+    align-items: center;
+    justify-content: center;
+    & label
+    {
+        display: block;
+
+        width: 12px;
+        height: 12px;
+
+        border: 3px solid black;
+        border-radius: 50%;
+    }
+}
+.feedback-slide
+{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+.client-name
+{
+    font-weight: 700;
+
+    text-align: center;
+}
+.pricelist-slider
+{
+    display: flex;
+
+    min-height: 470px;
+
+    background-color: @bg-color__gray;
+
+    align-items: center;
+    justify-content: center;
+}
+.pricelist
+{
+    display: flex;
+    &__plan-spec
+    {
+        display: none;
+    }
+    &__plan
+    {
+        border: 1px solid gray;
+    }
+}
+.plan__title
+{
+    background-color: @bg-color__darkblue;
+}
+@media (min-width: @screen-md)
+{
+    .features__tablet-inner
+    {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .feature__col
+    {
+        width: 50%;
+        margin-left: auto;
+    }
+    .mobilefone-pic
+    {
+        width: 50%;
+
+        background-position: 50% 125%;
+    }
+    .effect
+    {
+        display: flex;
+
+        min-height: 400px;
+
+        background: url('../img/nokia-hi.png') no-repeat 20% 50%;
+        &__inner
+        {
+            display: flex;
+            flex-direction: column;
+
+            width: 50%;
+            margin-left: auto;
+
+            justify-content: center;
+        }
+    }
+    .feedback-slide
+    {
+        flex-direction: column-reverse;
+    }
+    .pricelist__plan-spec
+    {
+        display: block;
+    }
+    .plan__title
+    {
+        min-height: 80px;
+    }
+    .plan__title-spec
+    {
+        background-color: @bg-color__gray;
+    }
+}
+@media (min-width: @screen-bg)
+{
+    .mobilefone-pic
+    {
+        display: none;
+    }
+    .features__col
+    {
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+        min-height: 605px;
+
+        background-color: @bg-color__gray;
+
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .feature
+    {
+        z-index: 2;
+
+        width: 265px;
+        min-height: 500px;
+
+        background: url('../img/nokia-hi.png') no-repeat 50% 0%;
+
+        justify-content: flex-end;
+    }
+    .effect
+    {
+        background-color: @bg-color__gray;
+    }
+    .feedback-slider
+    {
+        position: relative;
+
+        min-height: 400px;
+        &:before
+        {
+            font-size: 120px;
+            font-weight: 700;
+            line-height: 10px;
+
+            position: absolute;
+            top: 25%;
+            left: calc(~"50% - 30px");
+
+            content: '\201c';
+
+            color: gold;
+        }
+    }
+}
