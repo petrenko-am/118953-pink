@@ -10,108 +10,106 @@
 </head>
 <body class="form-page">
   <!--<svg>svg sprite</svg>-->
-  <div class="wrapper">
-    <header class="header">
-      <nav class="main-nav">
-        <a href="" class="main-nav__logo">PINK</a>
-        <a href="index.html" class="main-nav__link main-nav__link--active">ГЛАВНАЯ</a>
-        <a href="photo.html" class="main-nav__link">ФОТОГРАФИИ</a>
-        <a class="main-nav__link">КОНКУРС</a>
-        <a href="" class="main-nav__link">HTML ACADEMY</a>
-      </nav>
-      <div class="mobile-nav">
-        <a href="" class="mobile-nav__logo">PINK</a><a href="" class="mobile-nav__toggle-link">X</a>
-      </div>
-      <div class="main-foto">
-        <div class="main-foto__slogan">Конкурс на самое безбашеное путешествие с Пинк</div>
-      </div>
-    </header>
-    <main>
-      <div class="feedback-title">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! Пожалуйста, заполните форму ниже:</div>
-      <form class="form" action="https://echo.htmlacademy.ru/adaptive?" method="post">
-        <fieldset class="form__field form__field-name">
-          <div class="field__inner">
-            <label class="field-name__label" for="name">ИМЯ:</label>
-            <input class="field-name__input" id="name" type="text" placeholder="Введите ваше имя" name="feedback-writer__name" autofocus required>
-          </div>
-          <div class="field__inner">
-            <label class="field-name__label" for="lastname">ФАМИЛИЯ:</label>
-            <input class="field-name__input" id="lastname" type="text" placeholder="Укажите фамилию" name="feedback-writer__lastname" required>
-          </div>
-          <div class="field__inner">
-            <label class="field-name__label" for="middlename">ОТЧЕСТВО:</label>
-            <input class="field-name__input" id="middlename" type="text" placeholder="Ну и отчество тоже" name="feedback-writer__middlename">
-          </div>
-        </fieldset>
-        <fieldset class="form__field form__field-achiev">
-          <legend>Ваши безбашенные достижения в путешествии</legend>
-          <ul class="field-achiev__list">
-            <li>
-              <input type="checkbox" class="field-achiev__input" id="nameofinput1" name="nameofinput1" checked>
-              <label for="nameofinput1" class="field-achiev__lable">Сделал селфи с акулой</label>
-            </li>
-            <li>
-              <input type="checkbox" class="field-achiev__input" id="nameofinput2" name="nameofinput2" checked>
-              <label for="nameofinput2" class="field-achiev__lable">Обгорел на пляже</label>
-            </li>
-            <li>
-              <input type="checkbox" class="field-achiev__input" id="nameofinput3" name="nameofinput3">
-              <label for="nameofinput3" class="field-achiev__lable">Видел чака Норриса</label>
-            </li>
-            <li>
-              <input type="checkbox" class="field-achiev__input" id="nameofinput4" name="nameofinput4" disabled>
-              <label for="nameofinput4" class="field-achiev__lable">Накупил сувениров</label>
-            </li>
-            <li>
-              <input type="checkbox" class="field-achiev__input" id="nameofinput5" name="nameofinput5" checked>
-              <label for="nameofinput5" class="field-achiev__lable">Удержал башню</label>
-            </li>
-            <li>
-              <input type="checkbox" class="field-achiev__input" id="nameofinput6" name="nameofinput6">
-              <label for="nameofinput6" class="field-achiev__lable">Разгромил отель</label>
-            </li>
-          </ul>
-        </fieldset>
-        <fieldset class="form__field form__field-contacts">
-          <div class="field__inner">
-            <label for="inputname1" class="field-contacts__label">НОМЕР ТЕЛЕФОНЧИКА</label>
-            <input type="text" class="field-contacts__input" id="inputname1" placeholder="Номер, позязя">
-          </div>
-          <div class="field__inner">
-            <label for="inputname2" class="field-contacts__label">АДРЕСОК ПОЧТЫ</label>
-            <input type="text" class="field-contacts__input" id="inputname2" placeholder="E-mail, пожалуйста">
-          </div>
-        </fieldset>
-        <fieldset class="form__field form__field-apps">
-          <legend>С КАКИМ ПРИЛОЖЕНИЕМ ПУТЕШЕСТВОВАЛИ</legend>
-          <input type="text" class="field-apps__input" id="app-input1">
-          <label for="app-input1" class="field-apps__label">Pink для iOS</label>
-          <input type="text" class="field-apps__input" id="app-input2">
-          <label for="app-input2" class="field-apps__label">Pink для Android</label>
-          <input type="text" class="field-apps__input" id="app-input3">
-          <label for="app-input3" class="field-apps__label">Windows Phone</label>
-        </fieldset>
-        <fieldset class="form__field form__field-comment">
-          <legend>ОПИШИТЕ СВОИ ЭМОЦИИ</legend>
-          <textarea name="client-comment" id="" cols="30" rows="10" class="field-comment__input" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
-        </fieldset>
-        <input type="submit" class="form__btn-submit" value="ОТПРАВИТЬ ФОРМУ">
-      </form>
-    </main>
-    <footer>
-      <div class="follow-us">
-        <div class="follow-us__logo"></div>
-        <div class="follow-us__social-links">
-          <a href="" class="social-link">twitter</a>
-          <a href="" class="social-link">facebook</a>
-          <a href="" class="social-link">youtube</a>
+  <header class="header">
+    <nav class="main-nav">
+      <a href="" class="main-nav__logo">PINK</a>
+      <a href="index.html" class="main-nav__link main-nav__link--active">ГЛАВНАЯ</a>
+      <a href="photo.html" class="main-nav__link">ФОТОГРАФИИ</a>
+      <a class="main-nav__link">КОНКУРС</a>
+      <a href="" class="main-nav__link">HTML ACADEMY</a>
+    </nav>
+    <div class="mobile-nav">
+      <a href="" class="mobile-nav__logo">PINK</a><a href="" class="mobile-nav__toggle-link">X</a>
+    </div>
+    <div class="main-foto">
+      <h2 class="main-foto__title">Конкурс на самое безбашеное путешествие с Пинк</h2>
+    </div>
+  </header>
+  <main>
+    <div class="feedback-title">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! Пожалуйста, заполните форму ниже:</div>
+    <form class="form" action="https://echo.htmlacademy.ru/adaptive?" method="post">
+      <fieldset class="form__field form__field-name">
+        <div class="field__inner">
+          <label class="field-name__label" for="name">ИМЯ:</label>
+          <input class="field-name__input" id="name" type="text" placeholder="Введите ваше имя" name="feedback-writer__name" autofocus required>
         </div>
-        <div class="follow-us__copyright">
-          <div class="copyright__by">Разработано</div>
-          <div class="copyright__logo">HTML Academy Logo</div>
+        <div class="field__inner">
+          <label class="field-name__label" for="lastname">ФАМИЛИЯ:</label>
+          <input class="field-name__input" id="lastname" type="text" placeholder="Укажите фамилию" name="feedback-writer__lastname" required>
         </div>
+        <div class="field__inner">
+          <label class="field-name__label" for="middlename">ОТЧЕСТВО:</label>
+          <input class="field-name__input" id="middlename" type="text" placeholder="Ну и отчество тоже" name="feedback-writer__middlename">
+        </div>
+      </fieldset>
+      <fieldset class="form__field form__field-achiev">
+        <legend>Ваши безбашенные достижения в путешествии</legend>
+        <ul class="field-achiev__list">
+          <li>
+            <input type="checkbox" class="field-achiev__input" id="nameofinput1" name="nameofinput1" checked>
+            <label for="nameofinput1" class="field-achiev__lable">Сделал селфи с акулой</label>
+          </li>
+          <li>
+            <input type="checkbox" class="field-achiev__input" id="nameofinput2" name="nameofinput2" checked>
+            <label for="nameofinput2" class="field-achiev__lable">Обгорел на пляже</label>
+          </li>
+          <li>
+            <input type="checkbox" class="field-achiev__input" id="nameofinput3" name="nameofinput3">
+            <label for="nameofinput3" class="field-achiev__lable">Видел чака Норриса</label>
+          </li>
+          <li>
+            <input type="checkbox" class="field-achiev__input" id="nameofinput4" name="nameofinput4" disabled>
+            <label for="nameofinput4" class="field-achiev__lable">Накупил сувениров</label>
+          </li>
+          <li>
+            <input type="checkbox" class="field-achiev__input" id="nameofinput5" name="nameofinput5" checked>
+            <label for="nameofinput5" class="field-achiev__lable">Удержал башню</label>
+          </li>
+          <li>
+            <input type="checkbox" class="field-achiev__input" id="nameofinput6" name="nameofinput6">
+            <label for="nameofinput6" class="field-achiev__lable">Разгромил отель</label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset class="form__field form__field-contacts">
+        <div class="field__inner">
+          <label for="inputname1" class="field-contacts__label">НОМЕР ТЕЛЕФОНЧИКА</label>
+          <input type="text" class="field-contacts__input" id="inputname1" placeholder="Номер, позязя">
+        </div>
+        <div class="field__inner">
+          <label for="inputname2" class="field-contacts__label">АДРЕСОК ПОЧТЫ</label>
+          <input type="text" class="field-contacts__input" id="inputname2" placeholder="E-mail, пожалуйста">
+        </div>
+      </fieldset>
+      <fieldset class="form__field form__field-apps">
+        <legend>С КАКИМ ПРИЛОЖЕНИЕМ ПУТЕШЕСТВОВАЛИ</legend>
+        <input type="text" class="field-apps__input" id="app-input1">
+        <label for="app-input1" class="field-apps__label">Pink для iOS</label>
+        <input type="text" class="field-apps__input" id="app-input2">
+        <label for="app-input2" class="field-apps__label">Pink для Android</label>
+        <input type="text" class="field-apps__input" id="app-input3">
+        <label for="app-input3" class="field-apps__label">Windows Phone</label>
+      </fieldset>
+      <fieldset class="form__field form__field-comment">
+        <legend>ОПИШИТЕ СВОИ ЭМОЦИИ</legend>
+        <textarea name="client-comment" id="" cols="30" rows="10" class="field-comment__input" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+      </fieldset>
+      <input type="submit" class="form__btn-submit" value="ОТПРАВИТЬ ФОРМУ">
+    </form>
+  </main>
+  <footer>
+    <div class="follow-us">
+      <a href="index.html" class="follow-us__logo">PINK</a>
+      <div class="follow-us__social-links">
+        <a href="" class="social-link">twitter</a>
+        <a href="" class="social-link">facebook</a>
+        <a href="" class="social-link">youtube</a>
       </div>
-    </footer>
-  </div>
+      <div class="copyright">
+        <div class="copyright__by">Разработано</div>
+        <div class="copyright__logo">HTML Academy Logo</div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
