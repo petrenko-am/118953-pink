@@ -1,15 +1,15 @@
 .download-app,
-.features-row,
+.features,
 {
     display: flex;
 }
-.features-row
+.features
 {
     flex-direction: column;
 
     background-color: @bg-color__gray;
-}
-.features__intro
+
+&-intro
 {
     display: flex;
     flex-direction: column;
@@ -20,18 +20,28 @@
 
     align-items: center;
     justify-content: center;
+    text-align: center;
+    &__desc {
+      font-size: @font-size--h2;
+
+    }
+    &__desc:nth-child(1) {
+          margin-bottom: 20px;
+    }
 }
-.features__col
+&__col
 {
-    width: 50%;
+      text-align: center;
+
+}
 }
 .feature
 {
     display: flex;
     flex-direction: column;
 
-    min-height: 160px;
-    padding: 5px 0;
+    margin-bottom: 20px;
+    padding: 5px 7%;
 
     align-items: center;
     &__title
@@ -39,6 +49,9 @@
         font-weight: 700;
 
         margin-bottom: 10px;
+    }
+    &__desc {
+      font-size: @font-size--md;
     }
 }
 .mobilefone-pic
@@ -123,10 +136,11 @@
         display: flex;
         flex-direction: row-reverse;
     }
-    .feature__col
+    .features__col
     {
         width: 50%;
         margin-left: auto;
+        text-align: left;
     }
     .mobilefone-pic
     {
