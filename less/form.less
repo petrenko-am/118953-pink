@@ -17,17 +17,18 @@
 
     &__field
     {
-        padding: 0 7%;
-        border: 0;
         margin: 0;
+        padding: 0 7%;
+
+        border: 0;
         legend
         {
             font-size: @font-size--md;
 
+            text-align: center;
             text-transform: uppercase;
 
             color: @pink;
-            text-align: center;
         }
 
         &-name
@@ -52,8 +53,9 @@
         {
             min-height: 300px;
             padding: 35px 0;
-            legend {
-              display: none;
+            legend
+            {
+                display: none;
             }
         }
         &-apps
@@ -108,15 +110,19 @@
             }
         }
     }
-    &__submit {
-      min-height: 130px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      span {
-        color: @pink;
-      }
+    &__submit
+    {
+        display: flex;
+        flex-direction: column;
+
+        min-height: 130px;
+
+        justify-content: space-between;
+        align-items: center;
+        span
+        {
+            color: @pink;
+        }
     }
     &__btn-submit
     {
@@ -227,10 +233,10 @@
             box-sizing: border-box;
             width: 280px;
             height: 200px;
+            margin: 0 auto;
             padding: 20px;
 
             resize: none;
- margin: 0 auto;
 
             outline: 0;
         }
@@ -239,149 +245,197 @@
 // Планшет
 @media (min-width: @screen-md)
 {
-    .feedback-title {
-      font-size: @font-size;
-      width: 500px;
-      margin: 0 auto;
-      line-height: 30px;
-      padding: 100px 0 50px 0;
+    .feedback-title
+    {
+        font-size: @font-size;
+        line-height: 30px;
+
+        width: 500px;
+        margin: 0 auto;
+        padding: 100px 0 50px 0;
     }
-    .form {
-              padding: 0 7%;
-        &__field {
-            background-color: white;
-            padding: 0;
+    .form
+    {
+        padding: 0 7%;
+        &__field
+        {
             margin-bottom: 60px;
+            padding: 0;
+
             border: 2px solid @light-gray;
-            legend {
+            background-color: white;
+            legend
+            {
+                max-width: initial;
                 padding: 0 30px;
-            max-width: initial;
             }
         }
-        &__field-name {
+        &__field-name
+        {
             width: 100%;
             min-height: 290px;
+
             border: 0;
-            .field__inner {
+            .field__inner
+            {
                 flex-direction: row;
-                align-items: center;
+
                 width: 100%;
-                &:nth-child(3) {
-                  margin: 0;
+
+                align-items: center;
+                &:nth-child(3)
+                {
+                    margin: 0;
                 }
             }
         }
 
-        &__field-achiev {
-          order: 4;
-          margin-top: 0;
-        }
-        &__field-contacts {
-          order: 3;
-          width: 100%;
-          padding: 30px 60px 10px;
-          legend {
-              display: block;
-            }
-          .field__inner{
-              flex-direction: column-reverse;
-              width: 100%;
-          }
-        }
-        &__field-apps {
-          order: 2;
-          margin-top: 0;
-          legend {
-            padding-top: 0;
+        &__field-achiev
+        {
+            margin-top: 0;
 
-          }
+            order: 4;
         }
-        &__field-comment {
-          order: 5;
-          width: 100%;
-          padding: 45px 60px;
-          min-height: 295px;
-        }
-        &__submit {
-          order: 6;
-        }
-        &__submit {
-      min-height: initial;
-      flex-direction: row;
-      width: 100%;
-    }
-      }
-        .field {
-            &-name__label {
-                margin-right: 20px;
+        &__field-contacts
+        {
+            width: 100%;
+            padding: 30px 60px 10px;
+
+            order: 3;
+            legend
+            {
+                display: block;
             }
-            &-name__input {
+            .field__inner
+            {
+                flex-direction: column-reverse;
+
                 width: 100%;
             }
-            &-apps__inner {
-              margin: 0 0 0 60px;
-            }
-            &-achiev__list {
-              margin: 0 0 0 60px;
-            }
-            &-comment__input {
-              width: 100%;
-              height: 190px;
+        }
+        &__field-apps
+        {
+            margin-top: 0;
+
+            order: 2;
+            legend
+            {
+                padding-top: 0;
             }
         }
+        &__field-comment
+        {
+            width: 100%;
+            min-height: 295px;
+            padding: 45px 60px;
+
+            order: 5;
+        }
+        &__submit
+        {
+            order: 6;
+        }
+        &__submit
+        {
+            flex-direction: row;
+
+            width: 100%;
+            min-height: initial;
+        }
     }
+    .field
+    {
+        &-name__label
+        {
+            margin-right: 20px;
+        }
+        &-name__input
+        {
+            width: 100%;
+        }
+        &-apps__inner
+        {
+            margin: 0 0 0 60px;
+        }
+        &-achiev__list
+        {
+            margin: 0 0 0 60px;
+        }
+        &-comment__input
+        {
+            width: 100%;
+            height: 190px;
+        }
+    }
+}
 // Десктоп
 @media (min-width: @screen-bg)
 {
-    .feedback-title {
-      width: 770px;
-   }
-   .form {
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding: 0 130px;
-        &__field {
+    .feedback-title
+    {
+        width: 770px;
+    }
+    .form
+    {
+        flex-direction: row;
 
+        padding: 0 130px;
+
+        flex-wrap: wrap;
+        &__field
+        {
         }
-        &__field-name {
+        &__field-name
+        {
             width: 435px;
         }
-        &__field-achiev {
-          height: 230px;
+        &__field-achiev
+        {
+            height: 230px;
         }
-        &__field-contacts {
-          min-height: 160px;
-          padding: 30px 60px 0;
-            .field__inner {
-              float: left;
-              width: 380px;
-              margin-bottom: 0;
-              &:nth-child(2) {
-                float: right;
-              }
+        &__field-contacts
+        {
+            min-height: 160px;
+            padding: 30px 60px 0;
+            .field__inner
+            {
+                float: left;
+
+                width: 380px;
+                margin-bottom: 0;
+                &:nth-child(2)
+                {
+                    float: right;
+                }
             }
         }
-        &__field-apps {
+        &__field-apps
+        {
             width: 435px;
         }
-        &__field-comment {
-
+        &__field-comment
+        {
         }
-        &__btn-submit {
-
+        &__btn-submit
+        {
         }
     }
-    .field {
-      &-achiev__list {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 840px;
-        margin: 50px auto;
-        min-height: 140px;
-      li {
-            width: 280px;
-            margin: 0;
-      }
-      }
+    .field
+    {
+        &-achiev__list
+        {
+            display: flex;
+
+            max-width: 840px;
+            min-height: 140px;
+            margin: 50px auto;
+
+            flex-wrap: wrap;
+            li
+            {
+                width: 280px;
+                margin: 0;
+            }
+        }
     }
 }

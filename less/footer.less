@@ -52,28 +52,28 @@ footer
     align-items: center;
 }
 .social-link
+{
+    line-height: 50px;
+
+    display: inline-block;
+
+    width: 50px;
+    height: 50px;
+
+    border: 2px solid @light-gray;
+    border-radius: 50%;
+}
+.copyright
+{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    &__by
     {
-        line-height: 50px;
-
-        display: inline-block;
-
-        width: 50px;
-        height: 50px;
-
-        border: 2px solid @light-gray;
-        border-radius: 50%;
+        font-size: @font-size--md;
     }
-    .copyright
-    {
-        display: flex;
-
-        justify-content: space-between;
-        align-items: center;
-        &__by
-        {
-            font-size: @font-size--md;
-        }
-    }
+}
 // photoupload-page, form-page footer
 .photoupload-page .follow-us,
 .form-page .follow-us
@@ -145,7 +145,6 @@ footer
             justify-content: space-between;
         }
     }
-
 }
 @media (min-width: @screen-bg)
 {
