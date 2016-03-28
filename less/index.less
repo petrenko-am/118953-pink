@@ -1,37 +1,55 @@
+main
+{
+    color: @bg-menu__darkblue;
+}
 .download-app,
-.features-row,
+.features,
 {
     display: flex;
 }
-.features-row
+.features
 {
     flex-direction: column;
 
     background-color: @bg-color__gray;
-}
-.features__intro
-{
-    display: flex;
-    flex-direction: column;
 
-    min-height: 250px;
+    &-intro
+    {
+        display: flex;
+        flex-direction: column;
 
-    background-color: white;
+        min-height: 250px;
 
-    align-items: center;
-    justify-content: center;
-}
-.features__col
-{
-    width: 50%;
+        text-align: center;
+
+        background-color: white;
+
+        align-items: center;
+        justify-content: center;
+        &__desc
+        {
+            font-size: @font-size--h2;
+            font-weight: 300;
+
+            max-width: 300px;
+        }
+        &__desc:nth-child(1)
+        {
+            margin-bottom: 20px;
+        }
+    }
+    &__col
+    {
+        text-align: center;
+    }
 }
 .feature
 {
     display: flex;
     flex-direction: column;
 
-    min-height: 160px;
-    padding: 5px 0;
+    margin-bottom: 20px;
+    padding: 5px 7%;
 
     align-items: center;
     &__title
@@ -39,13 +57,19 @@
         font-weight: 700;
 
         margin-bottom: 10px;
+
+        color: black;
+    }
+    &__desc
+    {
+        font-size: @font-size--md;
     }
 }
 .mobilefone-pic
 {
     min-height: 300px;
 
-    background: url(../img/iphone-screen-mobile.png) no-repeat 50% -20%;
+    background: url(../img/iphone-screen-mobile.png) no-repeat 50% -100%;
 }
 .effect
 {
@@ -57,13 +81,28 @@
 }
 .feedback-slider
 {
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
     min-height: 350px;
 
     align-items: center;
-    justify-content: center;
+    &__controls
+    {
+        position: absolute;
+        bottom: 65px;
+        left: 50%;
+
+        display: flex;
+
+        width: 60px;
+        height: 20px;
+        margin-left: -30px;
+
+        justify-content: space-between;
+    }
     & label
     {
         display: block;
@@ -77,21 +116,47 @@
 }
 .feedback-slide
 {
+    line-height: 30px;
+
     display: flex;
     flex-direction: column;
 
-    align-items: center;
-    justify-content: center;
+    padding: 0 7%;
+
+    text-align: center;
+
+
+    &:nth-of-type(n+2)
+    {
+        display: none;
+    }
 }
-.client-name
+.client
 {
     font-weight: 700;
 
+    margin: 50px 0 20px 0;
+
     text-align: center;
+
+    color: black;
+
+    &__info
+    {
+        display: none;
+    }
+    &__feedback
+    {
+        font-size: @font-size--md;
+    }
 }
+
 .pricelist-slider
 {
+    position: relative;
+
     display: flex;
+    overflow: hidden;
 
     min-height: 470px;
 
@@ -99,6 +164,34 @@
 
     align-items: center;
     justify-content: center;
+    &__controls
+    {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+
+        display: flex;
+
+        width: 60px;
+        height: 20px;
+        margin-left: -30px;
+
+        justify-content: space-between;
+    }
+    & label
+    {
+        display: block;
+
+        width: 12px;
+        height: 12px;
+
+        border: 3px solid black;
+        border-radius: 50%;
+    }
+}
+.pricelist-slider
+{
+    min-height: 380px;
 }
 .pricelist
 {
@@ -109,30 +202,110 @@
     }
     &__plan
     {
-        border: 1px solid gray;
+        width: 280px;
+        min-height: 280px;
+
+        border-right: 1px solid @light-gray;
+        border-left: 1px solid @light-gray;
+        &:first-of-type
+        {
+            border-left: 2px solid red;
+        }
+        &:last-of-type
+        {
+            border-right: 2px solid @light-gray;
+        }
+        &:nth-child(2) .plan__title
+        {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+        &:last-of-type .plan__title
+        {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
     }
 }
-.plan__title
+.plan
 {
-    background-color: @bg-color__darkblue;
-}
-@media (min-width: @screen-md)
-{
-    .features__tablet-inner
+    &__title
     {
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: column;
+
+        min-height: 100px;
+
+        color: white;
+        background-color: @bg-color__darkblue;
+
+        justify-content: center;
+        align-items: center;
     }
-    .feature__col
+    &__name
     {
-        width: 50%;
-        margin-left: auto;
+        font-weight: 700;
+    }
+    &__details
+    {
+        line-height: 60px;
+
+        min-height: 60px;
+        padding: 0 25px;
+        &:nth-of-type(3)
+        {
+            border-top: 2px solid @light-gray;
+            border-bottom: 2px solid @light-gray;
+        }
+        &:last-of-type
+        {
+            border-bottom: 2px solid @light-gray;
+        }
+    }
+}
+// Планшет
+@media (min-width: @screen-md)
+{
+    .features
+    {
+        &-intro__desc
+        {
+            font-size: @font-size--h0;
+
+            max-width: 340px;
+            &:nth-child(1)
+            {
+                max-width: 610px;
+                margin-bottom: 0;
+            }
+        }
+        &__tablet-inner
+        {
+            display: flex;
+            flex-direction: row-reverse;
+
+            min-height: 490px;
+        }
+
+        &__col
+        {
+            display: flex;
+            flex-direction: column;
+
+            width: 50%;
+            margin-left: auto;
+
+            text-align: left;
+
+            justify-content: center;
+        }
     }
     .mobilefone-pic
     {
         width: 50%;
 
-        background-position: 50% 125%;
+        background-position: 50% 80px;
+        background-size: 230px;
     }
     .effect
     {
@@ -151,53 +324,212 @@
 
             justify-content: center;
         }
+        &__title
+        {
+            font-size: @font-size--h1;
+            font-weight: 700;
+
+            max-width: 190px;
+            margin-bottom: 20px;
+        }
+        &__desc
+        {
+            font-size: @font-size--md;
+            line-height: 24px;
+
+            max-width: 305px;
+            margin-bottom: 20px;
+        }
+        &__link
+        {
+            font-size: @font-size--md;
+
+            color: @pink;
+        }
+    }
+    .feedback-slider
+    {
+        min-height: 320px;
+        &__controls
+        {
+            bottom: 80px;
+        }
     }
     .feedback-slide
     {
         flex-direction: column-reverse;
     }
-    .pricelist__plan-spec
+    .client
     {
-        display: block;
-    }
-    .plan__title
-    {
-        min-height: 80px;
+        font-size: @font-size--title;
+        &__info
+        {
+            font-size: @font-size--md;
+            font-weight: 400;
+
+            display: block;
+        }
+
+        &__feedback
+        {
+            font-size: @font-size;
+        }
     }
     .plan__title-spec
     {
-        background-color: @bg-color__gray;
+    }
+    .pricelist
+    {
+        display: flex;
+        &-slider__controls
+        {
+            display: none;
+        }
+        &__plan-spec
+        {
+            display: block;
+        }
+        &__plan
+        {
+            width: 155px;
+            min-height: 220px;
+
+            border-right: 1px solid @light-gray;
+            border-left: 1px solid @light-gray;
+        }
+    }
+    .plan
+    {
+        &__title
+        {
+            min-height: 80px;
+
+            &-spec
+            {
+                background-color: @bg-color__gray;
+            }
+        }
+        &__name
+        {
+            font-weight: 700;
+        }
+        &__details
+        {
+            font-size: 0;
+
+            background-color: white;
+            &:nth-child(2)
+            {
+                border-top: 2px solid @light-gray;
+            }
+            &-spec
+            {
+                line-height: 60px;
+
+                min-height: 60px;
+                padding: 0 25px;
+
+                border-right: 1px solid @light-gray;
+                border-left: 2px solid @light-gray;
+                background-color: white;
+                &:nth-child(2)
+                {
+                    border-top: 2px solid @light-gray;
+                }
+                &:nth-of-type(3)
+                {
+                    border-top: 2px solid @light-gray;
+                    border-bottom: 2px solid @light-gray;
+                }
+                &:last-of-type
+                {
+                    border-bottom: 2px solid @light-gray;
+                }
+            }
+        }
     }
 }
+// Десктоп
 @media (min-width: @screen-bg)
 {
+    .features
+    {
+        &-intro
+        {
+            min-height: 320px;
+            &__desc
+            {
+                font-size: 50px;
+
+                max-width: 420px;
+                &:nth-child(1)
+                {
+                    max-width: 740px;
+                }
+            }
+        }
+        &__col
+        {
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+            min-height: 610px;
+
+            background-color: @bg-color__gray;
+
+            justify-content: center;
+            align-items: flex-end;
+        }
+    }
     .mobilefone-pic
     {
         display: none;
     }
-    .features__col
-    {
-        display: flex;
-        flex-direction: row;
-
-        width: 100%;
-        min-height: 605px;
-
-        background-color: @bg-color__gray;
-
-        justify-content: center;
-        align-items: flex-end;
-    }
     .feature
     {
+        line-height: @font-size--h1;
+
+        position: relative;
         z-index: 2;
 
-        width: 265px;
+        width: 255px;
         min-height: 500px;
+        padding: 0;
+
+        text-align: center;
 
         background: url('../img/nokia-hi.png') no-repeat 50% 0%;
 
         justify-content: flex-end;
+        &::before
+        {
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            display: inline-block;
+
+            width: 100%;
+            height: 2px;
+
+            content: '';
+
+            border-bottom: 1px solid transparent;
+            border-radius: 10px;
+            box-shadow: 0 -8px 10px 0 rgba(0,0,0,.8);
+        }
+        &__title
+        {
+            font-size: @font-size--h1;
+            line-height: @font-size--h1;
+
+            margin-bottom: 25px;
+        }
+        &__desc
+        {
+            max-width: 195px;
+        }
     }
     .effect
     {
@@ -207,10 +539,11 @@
     {
         position: relative;
 
-        min-height: 400px;
+        min-height: 410px;
         &:before
         {
-            font-size: 120px;
+            font-family: georgia;
+            font-size: 140px;
             font-weight: 700;
             line-height: 10px;
 
@@ -220,7 +553,43 @@
 
             content: '\201c';
 
-            color: gold;
+            color: @light-gray;
         }
+        &__controls
+        {
+            bottom: 50%;
+            left: 10%;
+
+            width: 80%;
+            height: 20px;
+            margin-left: 0;
+        }
+        &__slides
+        {
+            margin-top: auto;
+            margin-bottom: 35px;
+        }
+    }
+    .client__feedback
+    {
+        line-height: 30px;
+
+        max-width: 685px;
+    }
+    .pricelist
+    {
+        &-slider
+        {
+            min-height: 525px;
+        }
+        &__plan-spec,
+        &__plan
+        {
+            min-width: 235px;
+        }
+    }
+    .plan__title
+    {
+        min-height: 100px;
     }
 }

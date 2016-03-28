@@ -3,19 +3,61 @@ header
     position: relative;
 
     min-height: 460px;
+
+    background-color: @bg-color__darkblue;
 }
 .main-nav
 {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
 
-    display: flex;
     display: none;
     flex-direction: column;
 
-    min-height: 66px;
+    width: 100%;
+    min-height: 325px;
+
+    background-color: @bg-menu__darkblue;
+
+    justify-content: space-between;
+    &__link
+    {
+        font-weight: 700;
+        line-height: 6.4rem;
+
+        width: 100%;
+
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        color: white;
+        border-top: 1px solid lighten(@bg-menu__darkblue, 17%);
+        border-bottom: 1px solid black;
+        &--logo
+        {
+            display: flex;
+
+            padding: 0 6%;
+
+            border-top: 0;
+        }
+    }
+    //временно вместо свг
+    &__close-btn
+    {
+        font-size: 40px;
+
+        position: absolute;
+        top: 2%;
+        right: 6%;
+
+        text-decoration: none;
+
+        color: white;
+    }
 }
 .mobile-nav
 {
@@ -31,11 +73,21 @@ header
     padding: 0 6%;
     padding: 0 6%;
 
-    opacity: .5;
-    background-color: black;
+    background: rgba(0, 0, 0, .5);
 
     justify-content: space-between;
     align-items: center;
+    &__toggle-link
+    {
+        top: 30%;
+        right: .5em;
+
+        width: 50px;
+        height: 25px;
+        margin-left: auto;
+
+        background: linear-gradient(white 20%,transparent 20%,transparent 40%,white 40%,white 60%,transparent 60%,transparent 80%,white 80%);
+    }
 }
 .main-foto
 {
@@ -63,11 +115,17 @@ header
 
     justify-content: space-between;
     align-items: center;
-    & a
+    &__link
     {
+        font-weight: 700;
+
+        padding: 13px 35px;
+
         text-decoration: none;
 
         color: white;
+        border: 3px solid;
+        border-radius: 30px;
     }
     &__slogan
     {
@@ -75,7 +133,12 @@ header
     }
     &__info
     {
-        max-width: 235px;
+        font-size: @font-size--md;
+        font-weight: 300;
+
+        max-width: 240px;
+
+        text-align: center;
     }
 }
 // photoupload-page, form-page header
@@ -91,13 +154,14 @@ header
 
     min-height: 235px;
 
-    background: url(../img/bg-back-mobile.jpg) no-repeat 50% 50%;
+    background: url(../img/bg-back-mobile.jpg) no-repeat 50% 0%;
 
     align-items: center;
     justify-content: center;
     &__slogan
     {
-        font-size: @font-size--title;
+        font-size: @font-size--h2;
+        font-weight: 300;
 
         padding: 0 6%;
 
@@ -112,19 +176,44 @@ header
 {
     .main-foto
     {
-        background-position: 50% 100%;
+        min-height: 700px;
+
+        background-position: 80% 100%, 50% 50%;
+        background-size: 440px, cover;
     }
     .download-app
     {
         position: absolute;
-        top: 35%;
-        left: -webkit-calc(50% - 18rem);
-        left:         calc(~"50% - 18rem");
+        top: 30%;
+        left: calc(~"50% - 30rem");
+
+        min-height: 435px;
 
         background-color: transparent;
         &__slogan
         {
+            font-size: @font-size--h0;
+
             display: block;
+
+            max-width: 250px;
+
+            text-align: center;
+        }
+    }
+    .photoupload-page .main-foto,
+    .form-page .main-foto
+    {
+        min-height: 440px;
+
+        background-size: cover;
+
+        &__slogan
+        {
+            font-size: 50px;
+
+            max-width: 500px;
+            padding: 0;
         }
     }
 }
@@ -137,12 +226,43 @@ header
     }
     .main-nav
     {
+        font-weight: 400;
+
         display: flex;
         flex-direction: row;
 
         width: 100%;
+        min-height: 110px;
+        padding: 0 130px;
+
+        background: rgba(0, 0, 0, .3);
 
         justify-content: space-between;
         align-items: center;
+        &__link
+        {
+            width: initial;
+
+            text-transform: capitalize;
+
+            border: 0;
+        }
+        &__close-btn
+        {
+            display: none;
+        }
+    }
+    .photoupload-page .main-foto,
+    .form-page .main-foto
+    {
+        min-height: 395px;
+
+        background-position: 50% 50%;
+        background-size: 150%;
+
+        &__slogan
+        {
+            max-width: 750px;
+        }
     }
 }

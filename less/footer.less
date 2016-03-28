@@ -12,12 +12,33 @@ footer
 
     text-align: center;
 
+    align-items: center;
     flex-wrap: wrap;
     &__title
     {
-        font-size: @font-size--h1;
+        font-size: @font-size--h2;
+        font-weight: 300;
 
-        width: 100%;
+        width: 230px;
+        margin: 50px 0;
+    }
+    &__call,
+    &__mailto,
+    &__address
+    {
+        font-weight: 700;
+
+        width: 250px;
+        margin-bottom: 20px;
+        a
+        {
+            font-size: @font-size--h2;
+            font-weight: 300;
+
+            text-decoration: none;
+
+            color: @pink;
+        }
     }
 }
 .follow-us
@@ -29,6 +50,29 @@ footer
 
     justify-content: space-around;
     align-items: center;
+}
+.social-link
+{
+    line-height: 50px;
+
+    display: inline-block;
+
+    width: 50px;
+    height: 50px;
+
+    border: 2px solid @light-gray;
+    border-radius: 50%;
+}
+.copyright
+{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    &__by
+    {
+        font-size: @font-size--md;
+    }
 }
 // photoupload-page, form-page footer
 .photoupload-page .follow-us,
@@ -45,26 +89,45 @@ footer
     }
     .contacts
     {
-        flex-direction: row;
         &__title
         {
-            font-size: @font-size--h1;
+            font-size: @font-size--h0;
+
+            width: 380px;
+            margin: 50px auto;
+        }
+        &__links
+        {
+            display: flex;
 
             width: 100%;
+            margin: 0 auto;
+
+            flex-wrap: wrap;
         }
         &__call,
         &__mailto
         {
             width: 50%;
+            margin-bottom: 50px;
         }
         &__address
         {
             width: 100%;
+            a
+            {
+                display: inline-block;
+
+                max-width: 295px;
+            }
         }
     }
     .follow-us
     {
         display: flex;
+
+        min-height: 130px;
+        padding: 0 7%;
 
         justify-content: space-between;
         &__logo
@@ -72,21 +135,50 @@ footer
             width: 150px;
             height: 50px;
         }
+
+        &__social-links
+        {
+            display: flex;
+
+            width: 180px;
+
+            justify-content: space-between;
+        }
     }
 }
 @media (min-width: @screen-bg)
 {
     .contacts
     {
-        min-height: 465px;
-        &__call,
-        &__mailto
+        min-height: 370px;
+        &__title
         {
-            width: 33.3%;
+            font-size: 50px;
+
+            width: 475px;
+            margin: 80px auto 65px auto;
         }
+        &__call,
+        &__mailto,
         &__address
         {
             width: 33.3%;
         }
+        &__call
+        {
+            order: 1;
+        }
+        &__mailto
+        {
+            order: 3;
+        }
+        &__address
+        {
+            order: 2;
+        }
+    }
+    .follow-us
+    {
+        min-height: 200px;
     }
 }
