@@ -19,10 +19,10 @@
       <a href="" class="main-nav__link">HTML Academy</a>
     </nav>
     <div class="mobile-nav">
-      <a href="" class="mobile-nav__logo">PINK</a><a href="" class="mobile-nav__toggle-link">X</a>
+      <a href="" class="mobile-nav__logo">PINK</a><a href="" class="mobile-nav__toggle-link"></a>
     </div>
     <div class="main-foto">
-      <h2 class="main-foto__title">Конкурс на самое безбашеное путешествие с Пинк</h2>
+      <h2 class="main-foto__slogan">Конкурс на самое безбашеное путешествие с Пинк</h2>
     </div>
   </header>
   <main>
@@ -47,31 +47,32 @@
         <ul class="field-achiev__list">
           <li>
             <input type="checkbox" class="field-achiev__input" id="nameofinput1" name="nameofinput1" checked>
-            <label for="nameofinput1" class="field-achiev__lable">Сделал селфи с акулой</label>
+            <label for="nameofinput1" class="field-achiev__label">Сделал селфи с акулой</label>
           </li>
           <li>
             <input type="checkbox" class="field-achiev__input" id="nameofinput2" name="nameofinput2" checked>
-            <label for="nameofinput2" class="field-achiev__lable">Обгорел на пляже</label>
+            <label for="nameofinput2" class="field-achiev__label">Обгорел на пляже</label>
           </li>
           <li>
             <input type="checkbox" class="field-achiev__input" id="nameofinput3" name="nameofinput3">
-            <label for="nameofinput3" class="field-achiev__lable">Видел чака Норриса</label>
+            <label for="nameofinput3" class="field-achiev__label">Видел чака Норриса</label>
           </li>
           <li>
             <input type="checkbox" class="field-achiev__input" id="nameofinput4" name="nameofinput4" disabled>
-            <label for="nameofinput4" class="field-achiev__lable">Накупил сувениров</label>
+            <label for="nameofinput4" class="field-achiev__label">Накупил сувениров</label>
           </li>
           <li>
             <input type="checkbox" class="field-achiev__input" id="nameofinput5" name="nameofinput5" checked>
-            <label for="nameofinput5" class="field-achiev__lable">Удержал башню</label>
+            <label for="nameofinput5" class="field-achiev__label">Удержал башню</label>
           </li>
           <li>
             <input type="checkbox" class="field-achiev__input" id="nameofinput6" name="nameofinput6">
-            <label for="nameofinput6" class="field-achiev__lable">Разгромил отель</label>
+            <label for="nameofinput6" class="field-achiev__label">Разгромил отель</label>
           </li>
         </ul>
       </fieldset>
       <fieldset class="form__field form__field-contacts">
+        <legend>КОНТАКТНАЯ ИНФОРМАЦИЯ</legend>
         <div class="field__inner">
           <label for="inputname1" class="field-contacts__label">НОМЕР ТЕЛЕФОНЧИКА</label>
           <input type="text" class="field-contacts__input" id="inputname1" placeholder="Номер, позязя">
@@ -83,18 +84,23 @@
       </fieldset>
       <fieldset class="form__field form__field-apps">
         <legend>С КАКИМ ПРИЛОЖЕНИЕМ ПУТЕШЕСТВОВАЛИ</legend>
-        <input type="text" class="field-apps__input" id="app-input1">
-        <label for="app-input1" class="field-apps__label">Pink для iOS</label>
-        <input type="text" class="field-apps__input" id="app-input2">
-        <label for="app-input2" class="field-apps__label">Pink для Android</label>
-        <input type="text" class="field-apps__input" id="app-input3">
-        <label for="app-input3" class="field-apps__label">Windows Phone</label>
-      </fieldset>
+        <div class="field-apps__inner">
+          <input type="radio" class="field-apps__input" id="app-input1">
+          <label for="app-input1" class="field-apps__label">Pink для iOS</label>
+          <input type="radio" class="field-apps__input" id="app-input2">
+          <label for="app-input2" class="field-apps__label">Pink для Android</label>
+          <input type="radio" class="field-apps__input" id="app-input3">
+          <label for="app-input3" class="field-apps__label">Windows Phone</label>
+        </div>
+        </fieldset>
       <fieldset class="form__field form__field-comment">
         <legend>ОПИШИТЕ СВОИ ЭМОЦИИ</legend>
         <textarea name="client-comment" id="" cols="30" rows="10" class="field-comment__input" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
       </fieldset>
-      <input type="submit" class="form__btn-submit" value="ОТПРАВИТЬ ФОРМУ">
+      <div class="form__submit">
+        <input type="submit" class="form__btn-submit" value="ОТПРАВИТЬ ФОРМУ">
+        <div class="form__requared"><span>*</span> — обязательные поля</div>
+      </div>
     </form>
   </main>
   <footer>

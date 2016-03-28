@@ -1,9 +1,9 @@
 .feedback-title
 {
-    font-size: @font-size;
+    font-size: @font-size--md;
 
     min-height: 160px;
-    padding: 10% 6%;
+    padding: 50px 6%;
 
     text-align: center;
 }
@@ -14,8 +14,374 @@
 
     align-items: center;
     justify-content: space-between;
-    fieldset
+
+    &__field
     {
+        padding: 0 7%;
         border: 0;
+        margin: 0;
+        legend
+        {
+            font-size: @font-size--md;
+
+            text-transform: uppercase;
+
+            color: @pink;
+            text-align: center;
+        }
+
+        &-name
+        {
+            min-height: 378px;
+        }
+        &-achiev
+        {
+            width: 100%;
+            margin-top: -50px;
+
+            background-color: @bg-color__gray;
+            legend
+            {
+                max-width: 225px;
+                padding-top: 50px;
+
+                text-align: center;
+            }
+        }
+        &-contacts
+        {
+            min-height: 300px;
+            padding: 35px 0;
+            legend {
+              display: none;
+            }
+        }
+        &-apps
+        {
+            width: 100%;
+            min-height: 340px;
+            margin-top: -50px;
+
+            background-color: @bg-color__gray;
+            legend
+            {
+                max-width: 225px;
+                margin-bottom: 40px;
+                padding-top: 50px;
+
+                text-align: center;
+            }
+            input
+            {
+                display: none;
+            }
+            label
+            {
+                &::before
+                {
+                    line-height: 40px;
+
+                    display: inline-block;
+
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 20px;
+
+                    content: '';
+                    cursor: pointer;
+                    text-align: center;
+                    vertical-align: middle;
+
+                    border: 2px solid @light-gray;
+                    border-radius: 50%;
+                    background-color: white;
+                    background-image: none;
+                }
+            }
+        }
+        &-comment
+        {
+            min-height: 340px;
+            legend
+            {
+                padding: 40px 0 20px 0;
+            }
+        }
+    }
+    &__submit {
+      min-height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        color: @pink;
+      }
+    }
+    &__btn-submit
+    {
+        font-family: 'Open Sans', 'Arial', sans-serif;
+        font-size: @font-size;
+        font-weight: 700;
+
+        width: 280px;
+        height: 60px;
+
+        color: white;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+        background-color: @green;
+    }
+}
+.field
+{
+    &__inner
+    {
+        display: flex;
+        flex-direction: column;
+
+        width: 280px;
+        min-height: 100px;
+        margin-bottom: 20px;
+
+        justify-content: space-between;
+
+        & label
+        {
+            font-size: @font-size--md;
+            line-height: 30px;
+
+            color: @pink;
+        }
+        & input
+        {
+            font-size: @font-size;
+            line-height: 30px;
+
+            height: 60px;
+            padding: 13px;
+
+            color: @bg-menu__darkblue;
+        }
+    }
+    &-achiev
+    {
+        &__list
+        {
+            max-width: 280px;
+            margin: 0 auto;
+            padding: 0;
+
+            list-style: none;
+            li
+            {
+                margin: 50px 0;
+            }
+        }
+        &__input
+        {
+            display: none;
+        }
+        &__label
+        {
+            &::before
+            {
+                line-height: 40px;
+
+                display: inline-block;
+
+                width: 40px;
+                height: 40px;
+                margin-right: 20px;
+
+                content: '';
+                cursor: pointer;
+                text-align: center;
+                vertical-align: middle;
+
+                border: 2px solid @light-gray;
+                background-color: white;
+                background-image: none;
+            }
+        }
+    }
+    &-apps__inner
+    {
+        display: flex;
+        flex-direction: column;
+
+        width: 280px;
+        margin: 0 auto;
+        label
+        {
+            margin-bottom: 50px;
+        }
+    }
+    &-comment
+    {
+        &__input
+        {
+            font-size: @font-size;
+
+            box-sizing: border-box;
+            width: 280px;
+            height: 200px;
+            padding: 20px;
+
+            resize: none;
+ margin: 0 auto;
+
+            outline: 0;
+        }
+    }
+}
+// Планшет
+@media (min-width: @screen-md)
+{
+    .feedback-title {
+      font-size: @font-size;
+      width: 500px;
+      margin: 0 auto;
+      line-height: 30px;
+      padding: 100px 0 50px 0;
+    }
+    .form {
+              padding: 0 7%;
+        &__field {
+            background-color: white;
+            padding: 0;
+            margin-bottom: 60px;
+            border: 2px solid @light-gray;
+            legend {
+                padding: 0 30px;
+            max-width: initial;
+            }
+        }
+        &__field-name {
+            width: 100%;
+            min-height: 290px;
+            border: 0;
+            .field__inner {
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                &:nth-child(3) {
+                  margin: 0;
+                }
+            }
+        }
+
+        &__field-achiev {
+          order: 4;
+          margin-top: 0;
+        }
+        &__field-contacts {
+          order: 3;
+          width: 100%;
+          padding: 30px 60px 10px;
+          legend {
+              display: block;
+            }
+          .field__inner{
+              flex-direction: column-reverse;
+              width: 100%;
+          }
+        }
+        &__field-apps {
+          order: 2;
+          margin-top: 0;
+          legend {
+            padding-top: 0;
+
+          }
+        }
+        &__field-comment {
+          order: 5;
+          width: 100%;
+          padding: 45px 60px;
+          min-height: 295px;
+        }
+        &__submit {
+          order: 6;
+        }
+        &__submit {
+      min-height: initial;
+      flex-direction: row;
+      width: 100%;
+    }
+      }
+        .field {
+            &-name__label {
+                margin-right: 20px;
+            }
+            &-name__input {
+                width: 100%;
+            }
+            &-apps__inner {
+              margin: 0 0 0 60px;
+            }
+            &-achiev__list {
+              margin: 0 0 0 60px;
+            }
+            &-comment__input {
+              width: 100%;
+              height: 190px;
+            }
+        }
+    }
+// Десктоп
+@media (min-width: @screen-bg)
+{
+    .feedback-title {
+      width: 770px;
+   }
+   .form {
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0 130px;
+        &__field {
+
+        }
+        &__field-name {
+            width: 435px;
+        }
+        &__field-achiev {
+          height: 230px;
+        }
+        &__field-contacts {
+          min-height: 160px;
+          padding: 30px 60px 0;
+            .field__inner {
+              float: left;
+              width: 380px;
+              margin-bottom: 0;
+              &:nth-child(2) {
+                float: right;
+              }
+            }
+        }
+        &__field-apps {
+            width: 435px;
+        }
+        &__field-comment {
+
+        }
+        &__btn-submit {
+
+        }
+    }
+    .field {
+      &-achiev__list {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 840px;
+        margin: 50px auto;
+        min-height: 140px;
+      li {
+            width: 280px;
+            margin: 0;
+      }
+      }
     }
 }
