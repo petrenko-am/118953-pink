@@ -11,7 +11,7 @@ main
 {
     flex-direction: column;
 
-    background-color: @bg-color__gray;
+
 
     &-intro
     {
@@ -21,8 +21,6 @@ main
         min-height: 250px;
 
         text-align: center;
-
-        background-color: white;
 
         align-items: center;
         justify-content: center;
@@ -37,6 +35,16 @@ main
         {
             margin-bottom: 20px;
         }
+    }
+    &__tablet-inner
+    {
+        min-height: 490px;
+        padding-top: 60px;
+
+        background-color: @bg-color__gray;
+
+        -webkit-clip-path: polygon(0 35px, 100% 0, 100% 100%, 0% 100%);
+                clip-path: polygon(0 35px, 100% 0, 100% 100%, 0% 100%);
     }
     &__col
     {
@@ -65,11 +73,16 @@ main
         font-size: @font-size--md;
     }
 }
-.mobilefone-pic
+.mobilephone-pic
 {
     min-height: 300px;
 
     background: url(../img/iphone-screen-mobile.png) no-repeat 50% -100%;
+    @media (min-resolution: 1.5dppx)
+    {
+        background-image: url(../img/iphone-screen-mobile@2x.png);
+        background-size: 157px;
+    }
 }
 .effect
 {
@@ -159,6 +172,7 @@ main
     overflow: hidden;
 
     min-height: 470px;
+    padding-top: 150px;
 
     background-color: @bg-color__gray;
 
@@ -189,10 +203,6 @@ main
         border-radius: 50%;
     }
 }
-.pricelist-slider
-{
-    min-height: 380px;
-}
 .pricelist
 {
     display: flex;
@@ -217,8 +227,27 @@ main
         }
         &:nth-child(2) .plan__title
         {
+            position: relative;
+
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
+        }
+        &:nth-child(3) .plan__title
+        {
+            position: relative;
+            &::before
+            {
+                font-size: @font-size--md;
+                font-weight: 700;
+
+                position: absolute;
+                z-index: 2;
+                top: 15px;
+                left: 10px;
+
+                content: 'ХИТ';
+                transform: rotate(-45deg);
+            }
         }
         &:last-of-type .plan__title
         {
@@ -226,6 +255,12 @@ main
             border-bottom-right-radius: 3px;
         }
     }
+}
+.white-triangle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .plan
 {
@@ -248,6 +283,7 @@ main
     }
     &__details
     {
+        font-size: @font-size--md;
         line-height: 60px;
 
         min-height: 60px;
@@ -261,6 +297,24 @@ main
         {
             border-bottom: 2px solid @light-gray;
         }
+    }
+    &__hit
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__yes
+    {
+        float: right;
+
+        margin-top: 20px;
+    }
+    &__no
+    {
+        float: right;
+
+        margin-top: 15px;
     }
 }
 // Планшет
@@ -300,7 +354,7 @@ main
             justify-content: center;
         }
     }
-    .mobilefone-pic
+    .mobilephone-pic
     {
         width: 50%;
 
@@ -309,11 +363,19 @@ main
     }
     .effect
     {
+        position: relative;
+
         display: flex;
 
         min-height: 400px;
 
         background: url('../img/nokia-hi.png') no-repeat 20% 50%;
+        &__timer
+        {
+            position: absolute;
+            top: 60px;
+            left: calc(~"50% - 40px");
+        }
         &__inner
         {
             display: flex;
@@ -331,6 +393,8 @@ main
 
             max-width: 190px;
             margin-bottom: 20px;
+
+            color: black;
         }
         &__desc
         {
@@ -417,7 +481,12 @@ main
         {
             font-size: 0;
 
+            display: flex;
+
             background-color: white;
+
+            align-items: center;
+            justify-content: center;
             &:nth-child(2)
             {
                 border-top: 2px solid @light-gray;
@@ -446,6 +515,13 @@ main
                     border-bottom: 2px solid @light-gray;
                 }
             }
+        }
+        &__yes,
+        &__no
+        {
+            float: none;
+
+            margin-top: 0;
         }
     }
 }
@@ -482,7 +558,7 @@ main
             align-items: flex-end;
         }
     }
-    .mobilefone-pic
+    .mobilephone-pic
     {
         display: none;
     }
@@ -490,34 +566,35 @@ main
     {
         line-height: @font-size--h1;
 
-        position: relative;
         z-index: 2;
 
         width: 255px;
-        min-height: 500px;
+        min-height: 565px;
         padding: 0;
 
         text-align: center;
 
-        background: url('../img/nokia-hi.png') no-repeat 50% 0%;
-
         justify-content: flex-end;
-        &::before
+
+        &:nth-child(1)
         {
-            position: absolute;
-            top: 50%;
-            left: 0;
-
-            display: inline-block;
-
-            width: 100%;
-            height: 2px;
-
-            content: '';
-
-            border-bottom: 1px solid transparent;
-            border-radius: 10px;
-            box-shadow: 0 -8px 10px 0 rgba(0,0,0,.8);
+            background: url('../img/iphone-screen-desktop-1@1x.png') no-repeat 50% 0%;
+            @media (min-resolution: 1.5dppx)
+            {
+                background-image: url(../img/iphone-screen-desktop-1@2x.png);
+            }
+        }
+        &:nth-child(2)
+        {
+            background: url('../img/iphone-screen-desktop-2@1x.png') no-repeat 50% 0%;
+            @media (min-resolution: 1.5dppx)
+            {
+                background-image: url(../img/iphone-screen-desktop-2@2x.png);
+            }
+        }
+        &:nth-child(3)
+        {
+            background: url('../img/nokia-hi.png') no-repeat 50% 0%;
         }
         &__title
         {
@@ -534,6 +611,10 @@ main
     .effect
     {
         background-color: @bg-color__gray;
+        &__inner
+        {
+            width: 700px;
+        }
     }
     .feedback-slider
     {

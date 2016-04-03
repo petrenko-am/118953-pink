@@ -1,5 +1,7 @@
 .uploadcontent
 {
+    font-size: @font-size--md;
+
     display: flex;
     flex-direction: column;
 
@@ -17,6 +19,11 @@
     &__item--panarama
     {
         position: relative;
+        &__item
+        {
+            min-height: 300px;
+            margin: 10px 10px;
+        }
         &::before
         {
             line-height: 35px;
@@ -26,87 +33,303 @@
 
             display: block;
 
-            width: 140px;
+            width: 150px;
             height: 35px;
 
             content: 'ПАНОРАМА ДНЯ';
             text-align: center;
 
             color: white;
-            background-color: pink;
+            background-color: @pink;
         }
     }
-    &__item
+    &__inner
     {
-        min-height: 325px;
-        margin: 10px 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__desc
+    {
+        width: 280px;
+        min-height: 140px;
+        margin: -5px auto 0 auto;
+        padding: 30px 15px 25px;
 
-        background-color: gray;
+        background-color: @bg-color__gray;
+    }
+    &__username
+    {
+        font-weight: 700;
+
+        margin-bottom: 10px;
+        span
+        {
+            font-weight: 400;
+
+            text-transform: uppercase;
+
+            color: @text-gray;
+        }
+    }
+    &__text
+    {
+        margin-bottom: 20px;
+    }
+    &__like
+    {
+        font-size: 12px;
+
+        display: flex;
+
+        width: 120px;
+
+        text-transform: uppercase;
+
+        color: @pink;
+
+        justify-content: space-between;
+    }
+    &__like-count
+    {
+        display: inline-block;
     }
     &__slogan
     {
+        line-height: 30px;
+
+        max-width: 320px;
         min-height: 170px;
+        padding: 50px 10px;
 
         text-align: center;
     }
     &__loadimg
     {
+        position: relative;
+
         display: flex;
         flex-direction: column;
 
+        width: 320px;
+        padding-top: 20px;
+
+        background-color: @bg-color__gray;
+
         align-items: center;
+        &::before
+        {
+            position: absolute;
+            top: 555px;
+
+            width: 320px;
+            height: 2px;
+
+            content: '';
+
+            background-color: #dddfe0;
+        }
     }
-    .loadimg
+}
+.loadimg
+{
+    &__img
     {
-        &__img
+        width: 280px;
+        height: 375px;
+    }
+    &__settings
+    {
+        margin-top: -5px;
+
+        background-color: @bg-color__gray;
+    }
+    &__filters
+    {
+        width: 280px;
+        min-height: 162px;
+
+        svg
         {
-            width: 280px;
-            height: 375px;
+            height: 44px;
+
+            cursor: pointer;
+            &:not(:first-child)
+            {
+                fill: #b5b9be;
+            }
         }
-        &__filters svg
+    }
+    &__filters-icons
+    {
+        display: flex;
+
+        padding: 40px 44px;
+
+        justify-content: space-between;
+    }
+    &__filters-bar
+    {
+        padding: 0 40px 40px;
+    }
+    &__uploadlink
+    {
+        display: flex;
+        flex-direction: column;
+
+        min-height: 200px;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+}
+.uploadlink__btn
+{
+    font-weight: 700;
+
+    padding: 13px 35px;
+
+    text-decoration: none;
+
+    color: @pink;
+    border: 3px solid;
+    border-radius: 30px;
+    &--true
+    {
+        margin-bottom: 12px;
+    }
+    &--false
+    {
+        color: #b5b9be;
+    }
+}
+.bar
+{
+    position: relative;
+    &-scale
+    {
+        height: 2px;
+
+        background-color: @bg-menu__darkblue;
+
+        &-toggle
         {
-            width: 50px;
-            height: 50px;
-
-            background-color: pink;
+            position: absolute;
         }
-        &__uploadlink
-        {
-            display: flex;
-            flex-direction: column;
+    }
+    &-scale__toggle
+    {
+        position: absolute;
+        top: -7.5px;
+        right: 33px;
 
-            min-height: 200px;
+        width: 15px;
+        height: 15px;
 
-            text-align: center;
-
-            justify-content: center;
-        }
+        border: 2px solid @pink;
+        border-radius: 50%;
+        background-color: white;
+    }
+    &--fill,
+    &--contrast
+    {
+        display: none;
     }
 }
 @media (min-width: @screen-md)
 {
     .uploadcontent
     {
+        width: 700px;
+        margin: 0 auto;
         &__item--panarama
         {
             width: 100%;
             min-height: 630px;
+
+            .uploadcontent__desc
+            {
+                flex-direction: row;
+
+                width: 620px;
+
+                flex-wrap: wrap;
+                align-content: flex-start;
+            }
+            .uploadcontent__username
+            {
+                order: 1;
+            }
+            .uploadcontent__like
+            {
+                margin-top: 0;
+                margin-left: auto;
+
+                order: 2;
+            }
+            .uploadcontent__text
+            {
+                width: 100%;
+
+                order: 3;
+            }
         }
+
         &__inner
         {
             display: flex;
             flex-direction: row;
 
             width: 620px;
+            min-height: 1420px;
+            margin-top: 50px;
 
             flex-wrap: wrap;
             justify-content: space-between;
         }
+        &__item
+        {
+            margin: 0;
+        }
+        &__desc
+        {
+            display: flex;
+            flex-direction: column;
+
+            width: 300px;
+            min-height: 156px;
+            padding: 30px 30px 25px;
+        }
+        &__text
+        {
+            margin-bottom: 0;
+        }
+        &__like
+        {
+            margin-top: auto;
+        }
+        &__loadimg
+        {
+            flex-direction: row;
+
+            width: 620px;
+            width: 700px;
+            padding: 58px 40px;
+
+            justify-content: space-between;
+            &::before
+            {
+                display: none;
+            }
+        }
+        &__slogan
+        {
+            font-size: @font-size--h3;
+
+            max-width: 440px;
+        }
     }
-    .uploadcontent__loadimg
-    {
-        flex-direction: row;
-    }
+
     .loadimg
     {
         &__settings
@@ -114,12 +337,92 @@
             display: flex;
             flex-direction: column;
 
+            width: 300px;
+            height: 400px;
+
             align-items: center;
         }
         &__filters
         {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+
+            min-height: 200px;
+            margin-top: 9px;
+            &-icons
+            {
+                flex-direction: column;
+
+                width: 27px;
+                height: 163px;
+                margin-right: 28px;
+                padding: 0;
+                svg
+                {
+                    width: 22px;
+                    height: 22px;
+                    &:not(:first-child)
+                    {
+                        fill: @pink;
+                    }
+                }
+            }
+            &-bar
+            {
+                position: relative;
+
+                display: flex;
+                flex-direction: column;
+
+                width: 202px;
+                height: 163px;
+                padding: 0;
+
+                justify-content: space-between;
+            }
+        }
+        &__uploadlink
+        {
+            width: 260px;
+        }
+    }
+
+    .bar
+    {
+        padding: 10px 0;
+
+        &::before
+        {
+            position: absolute;
+            top: 35px;
+            left: -55px;
+
+            width: 275px;
+            height: 2px;
+
+            content: '';
+
+            background-color: #dddfe0;
+        }
+        &-scale__toggle
+        {
+            top: 2.5px;
+        }
+        &--fill
+        {
+            display: block;
+            .bar-scale__toggle
+            {
+                left: 20px;
+            }
+        }
+        &--contrast
+        {
+            display: block;
+            .bar-scale__toggle
+            {
+                left: 100px;
+            }
         }
     }
 }
@@ -127,6 +430,8 @@
 {
     .uploadcontent
     {
+        width: 100%;
+        margin: 0;
         &__item--panarama
         {
             width: 100%;

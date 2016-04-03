@@ -101,7 +101,13 @@ header
 
         color: white;
     }
+    @media (min-resolution: 1.5dppx)
+    {
+        background: url(../img/iphone-hand-mobile@2x.png) no-repeat 0 100%, url(../img/bg-back-mobile@2x.jpg) no-repeat 50% 50%;
+        background-size: 50%, cover;
+    }
 }
+
 .download-app
 {
     display: flex;
@@ -141,6 +147,15 @@ header
         text-align: center;
     }
 }
+.companys-logo
+{
+    display: flex;
+
+    width: 215px;
+
+    justify-content: space-between;
+    align-items: center;
+}
 // photoupload-page, form-page header
 .photoupload-page .header,
 .form-page .header
@@ -169,8 +184,12 @@ header
 
         color: white;
     }
+    @media (min-resolution: 1.5dppx)
+    {
+        background-image: url(../img/bg-back-mobile@2x.jpg);
+        background-size: cover;
+    }
 }
-//
 // Tablet version
 @media (min-width: @screen-md)
 {
@@ -178,9 +197,15 @@ header
     {
         min-height: 700px;
 
+        background-image: url(../img/iphone-hand-tablet@1x.png), url(../img/bg-back-tablet@1x.jpg);
         background-position: 80% 100%, 50% 50%;
-        background-size: 440px, cover;
+        background-size: 700px, cover;
+        @media (min-resolution: 1.5dppx)
+        {
+            background-image: url(../img/iphone-hand-tablet@2x.png), url(../img/bg-back-tablet@2x.jpg);
+        }
     }
+
     .download-app
     {
         position: absolute;
@@ -206,8 +231,12 @@ header
     {
         min-height: 440px;
 
+        background-image: url(../img/bg-back-tablet@1x.jpg);
         background-size: cover;
-
+        @media (min-resolution: 1.5dppx)
+        {
+            background-image: url(../img/bg-back-tablet@2x.jpg);
+        }
         &__slogan
         {
             font-size: 50px;
@@ -252,13 +281,27 @@ header
             display: none;
         }
     }
+    .main-foto
+    {
+        min-height: 853px;
+
+        background-image: url(../img/iphone-hand-desktop@1x.png), url(../img/bg-back-desktop.jpg);
+        background-size: 1050px, cover;
+        @media (min-resolution: 1.5dppx)
+        {
+            background-image: url(../img/iphone-hand-desktop@2x.png), url(../img/bg-back-desktop.jpg);
+        }
+    }
+
     .photoupload-page .main-foto,
     .form-page .main-foto
     {
         min-height: 395px;
 
-        background-position: 50% 50%;
-        background-size: 150%;
+        background-image: url(../img/bg-back-desktop.jpg);
+        background-position: 50% 0%;
+        background-size: 200%;
+
 
         &__slogan
         {

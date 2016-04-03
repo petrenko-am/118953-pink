@@ -19,6 +19,28 @@ module.exports = function(grunt) {
       }
     },
 
+    svgmin: {
+        symbols: {
+          files: [{
+            expand: true,
+            src: ["img/icons/*.svg"]
+          }]
+       }
+    },
+
+    svgstore: {
+        options: {
+          svg: {
+            style: "display:none"
+          }
+        },
+        symbols: {
+          files: {
+            'img/symbols.svg': ['img/icons/*.svg'],
+          }
+        }
+      },
+
     postcss: {
       options: {
         processors: [
@@ -64,4 +86,5 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask("serve", ["browserSync", "watch"]);
+  grunt.registerTask("symbols", ["svgmin", "svgstore"]);
 };
